@@ -118,6 +118,20 @@ func AsyncHTTP(categories []string) ([]Response, error) {
 	return results, nil
 }
 
+func WriteToJson(jsonObject []byte) {
+	// writing json to file
+	_ = ioutil.WriteFile("topnewsheadlines.json", jsonObject, 0644)
+
+	// to append to a file
+	// create the file if it doesn't exists with O_CREATE, Set the file up for read write, add the append flag and set the permission
+	f, err := os.OpenFile("./debug-web.log", os.O_CREATE|os.O_RDWR|os.O_APPEND, 0660)
+	if err != nil {
+		log.Fatal(err)
+	}
+	// write to file, f.Write()
+	f.Write(jsonObject)
+}
+
 func main() {
 	categories := []string{"business", "general", "science", "technology", "health"}
 	start := time.Now()
@@ -127,8 +141,8 @@ func main() {
 		fmt.Println(err)
 		return
 	}
-	for _, result := range results {
-		fmt.Println(result)
-	}
+	resultJson, _ := json.MarshalIndent(results, "", " ")
+	WriteToJson(resultJson)
+
 	fmt.Println("finished in ", time.Since(start))
 }
