@@ -13,7 +13,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-// number of parallelism
+// number of NUM_PARALLEL
 const NUM_PARALLEL = 5
 
 // A Response struct to map the Entire Response
@@ -22,6 +22,7 @@ type Response struct {
 	Articles []Article `json:"articles"`
 }
 
+// An Article struct to map news entries
 type Article struct {
 	Title string `json:"title"`
 	Url   string `json:"url"`
@@ -77,6 +78,7 @@ func streamNews(done <-chan struct{}, inputs []string) <-chan string {
 }
 
 func AsyncHTTP(categories []string) ([]Response, error) {
+	// This is a function that spawn 5 worker goroutines, to fetch news
 	done := make(chan struct{})
 	defer close(done)
 
