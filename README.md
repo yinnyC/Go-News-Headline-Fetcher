@@ -1,7 +1,8 @@
 # MakeUtility - Top News Headline Fetcher
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/yinnyC/MakeUtility)](https://goreportcard.com/report/github.com/yinnyC/MakeUtility)
-[![Repo Size](https://img.shields.io/github/repo-size/yinnyC/MakeUtility)](https://img.shields.io/github/repo-size/yinnyC/MakeUtility)
+[![code size](https://img.shields.io/github/languages/code-size/yinnyC/MakeUtility)](https://img.shields.io/github/languages/code-size/yinnyC/MakeUtility)
+[![last commit](https://img.shields.io/github/last-commit/yinnyC/MakeUtility)](https://img.shields.io/github/last-commit/yinnyC/MakeUtility)
 
 This is a program written in Golang to fetch the top 10 news headlines from [NewsAPI](https://newsapi.org/). The program was built with **Goroutines** libery so that it can fetch news from the 5 categories(business, general, science, technology, health)  independently and simultaneously.
 
