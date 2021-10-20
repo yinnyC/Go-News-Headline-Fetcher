@@ -1,4 +1,4 @@
-# MakeUtility - Top News Headline Fetcher
+# Top News Headline Fetcher
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/yinnyC/MakeUtility)](https://goreportcard.com/report/github.com/yinnyC/MakeUtility)
 [![code size](https://img.shields.io/github/languages/code-size/yinnyC/MakeUtility)](https://img.shields.io/github/languages/code-size/yinnyC/MakeUtility)
